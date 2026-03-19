@@ -1,11 +1,13 @@
 import './App.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
  
   return (
-    //add components below!
     <>
-      
+      <header><Header /></header>
+      <footer><Footer /></footer>
     </>
   )
 }
