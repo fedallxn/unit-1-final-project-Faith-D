@@ -1,9 +1,9 @@
-import pothos from './assets/plantImages/pothos.png'
-import monstera from './assets/plantImages/monstera.png'
-import spiderPlant from './assets/plantImages/spiderPlant.png'
-import snakePlant from './assets/plantImages/snakePlant.png'
-import fiddldLeafFig from './assets/plantImages/fiddleLeafFig.png'
-import peaceLily from './assets/plantImages/peaceLily.png'
+import pothos from './assets/plantImages/pothos.jpg'
+import monstera from './assets/plantImages/monstera.jpg'
+import spiderPlant from './assets/plantImages/spiderPlant.jpg'
+import snakePlant from './assets/plantImages/snakePlant.jpg'
+import fiddleLeafFig from './assets/plantImages/fiddleLeafFig.jpg'
+import peaceLily from './assets/plantImages/peaceLily.jpg'
 
 const mockPlantData = [
     {
@@ -56,7 +56,7 @@ const mockPlantData = [
     },
     {
         id: 5,
-        image: fiddldLeafFig,
+        image: fiddleLeafFig,
         imageAlt: 'A photo of a fiddle leaf fig plant with large violin shaped glassy leaves',
         health: 100,
         lastWartered: '03-15-2026',
