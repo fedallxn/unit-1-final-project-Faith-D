@@ -11,6 +11,9 @@ import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [plants, setPlants] = useState(mockPlantData)
+  const addPlant = (newPlant) => {
+    setPlants([...plants, newPlant])
+  }
 
   return (
     <>
@@ -18,7 +21,7 @@ function App() {
       <main>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/collection" element={<CollectionPage plants={plants}/>} />
+            <Route path="/collection" element={<CollectionPage plants={plants} addPlant={addPlant}/>} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
         </Routes>
