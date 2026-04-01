@@ -11,11 +11,11 @@ function CollectionPage({plants, addPlant}) {
     }
     return (
         <div>
-            <h3>Plant Collection</h3>
+            <h2>Plant Collection</h2>
             <button onClick={handleForm}>
                 {showForm ? 'Cancel' : 'Add a Plant'}
             </button>
-            {showForm && <AddPlantForm addPlant={addPlant} close={handleForm} />}
+            {showForm && <AddPlantForm plants={plants} addPlant={addPlant} close={handleForm} />}
             <PlantCollection plants={plants} />
         </div>
     )
