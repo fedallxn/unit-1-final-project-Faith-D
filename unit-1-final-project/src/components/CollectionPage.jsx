@@ -2,7 +2,7 @@ import PlantCollection from "./PlantCollection";
 import { useState } from "react";
 import AddPlantForm from "./AddPlantForm";
 
-function CollectionPage({plants, addPlant}) {
+function CollectionPage({plants, addPlant, deletePlant}) {
     //prevents the form from being viewed until user adds a new plant
     const [showForm, setShowForm] = useState(false)
     
@@ -16,7 +16,7 @@ function CollectionPage({plants, addPlant}) {
                 {showForm ? 'Cancel' : 'Add a Plant'}
             </button>
             {showForm && <AddPlantForm plants={plants} addPlant={addPlant} close={handleForm} />}
-            <PlantCollection plants={plants} />
+            <PlantCollection plants={plants} deletePlant={deletePlant} />
         </div>
     )
 }
