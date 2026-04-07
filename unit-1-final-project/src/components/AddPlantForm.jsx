@@ -6,7 +6,7 @@ function AddPlantForm({plants, addPlant, close}) {
         name: '',
         species: '',
         wateringFrequency: '',
-        lightingRequirement: '',
+        sunlightNeeds: '',
         isToxic: false
     })
 
@@ -27,7 +27,7 @@ function AddPlantForm({plants, addPlant, close}) {
             name: formData.name,
             species: formData.species,
             wateringFrequency: Number(formData.wateringFrequency),
-            lightRequirement: formData.lightRequirement,
+            sunlightNeeds: formData.sunlightNeeds,
             isToxic: formData.isToxic,
             health: 100,
             lastWatered: new Date().toLocaleDateString('en-US'),
@@ -53,7 +53,7 @@ function AddPlantForm({plants, addPlant, close}) {
                     <input type="number" name="wateringFrequency" value={formData.wateringFrequency} onChange={handleChange} min={1} max={30} required />
                 </label><br />
                 <label>Light Requirement:
-                    <select name="lightRequirement" value={formData.lightRequirement} onChange={handleChange} required>
+                    <select name="sunlightNeeds" value={formData.sunlightNeeds} onChange={handleChange} required>
                         <option value=''>-- Select a light requirement --</option>
                         <option value='Low'>Low</option>
                         <option value='Low to Medium'>Low to Medium</option>

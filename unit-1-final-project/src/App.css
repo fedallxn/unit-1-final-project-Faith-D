@@ -5,6 +5,7 @@
   gap: 24px;
   padding: 24px;
   justify-content: center;
+  align-items: flex-start;
 }
 .plant-card {
   width: 350px;
