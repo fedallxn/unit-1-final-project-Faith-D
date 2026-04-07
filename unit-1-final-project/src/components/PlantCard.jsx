@@ -1,8 +1,10 @@
 import { useState } from "react";
 import ConfirmModal from "./ConfirmModal";
+import PlantCareInfo from "./PlantCareInfo";
 
 function PlantCard({plant, deletePlant}) {
     const [showModal, setShowModal] = useState(false);
+    const [showCareInfo, setShowCareInfo] = useState(false);
 
     const handleDelete = () => {
         setShowModal(true)
@@ -17,6 +19,10 @@ function PlantCard({plant, deletePlant}) {
         setShowModal(false)
     }
 
+    const handleToggle = () => {
+        setShowCareInfo(!showCareInfo)
+    }
+
     return (
         <article className="plant-card">
             <img src={plant.image} alt={plant.imageAlt} />
@@ -26,6 +32,10 @@ function PlantCard({plant, deletePlant}) {
             {showModal && (
                 <ConfirmModal message={`Are you sure you want to remove ${plant.name} from your collection?`} confirm={handleConfirm} cancel={handleCancel} />
             )}
+            <button className="toggle-button" onClick={handleToggle}>
+                {showCareInfo ? '-' : '+'}
+            </button>
+            {showCareInfo && (<PlantCareInfo plant={plant} />)}
         </article>
     )
 }
