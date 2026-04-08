@@ -1,4 +1,131 @@
-/*Use this page to style app*/
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Mansalva&display=swap');
+
+:root {
+  --deep-forest: #1C3410;
+  --rich-moss: #2D4A1E;
+  --fern: #3B6D11;
+  --leaf: #639922;
+  --sage: #C0DD97;
+  --mist: #EAF3DE;
+  --cream: #FAFAF7;
+  --bark: #8B5E3C;
+  --toxic-bg: #FAECE7;
+  --toxic-text: #993C1D;
+  --safe-bg: #EAF3DE;
+  --safe-text: #3B6D11;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gelasio", serif;
+  background-color: var(--cream);
+  color: var(--deep-forest);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Mansalva", sans-serif;
+  color: var(--deep-forest);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+header {
+  background-color: var(--deep-forest);
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-family: "Mansalva", sans-serif;
+  color: var(--sage);
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  font-family: "Gelasio", serif;
+  color: var(--sage);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--cream);
+}
+
+nav a.active {
+  color: var(--cream);
+  border-bottom: 1.5px solid var(--cream);
+  padding-bottom: 2px;
+}
+
+footer {
+  background-color: var(--deep-forest);
+  color: var(--sage);
+  text-align: center;
+  padding: 24px 40px;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+button {
+  font-family: "Gelasio", serif;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: var(--toxic-text);
+  border: 1.5px solid var(--toxic-text);
+}
+
+.btn-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--fern);
+  color: var(--mist);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
 .plant-collection {
   display: flex;
   flex-wrap: wrap;
@@ -8,23 +135,132 @@
   align-items: flex-start;
 }
 .plant-card {
-  width: 350px;
-  border-radius: 12px;
+  background-color: var(--cream);
+  border: 0.5px solid var(--sage);
+  border-radius: 16px;
+  width: 300px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.plant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(44, 74, 30, 0.15);
+}
+
 .plant-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
+
+.plant-card-body {
+  padding: 16px;
+}
+
+.plant-card h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.plant-card p {
+  font-size: 13px;
+  color: var(--fern);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.plant-card-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.badge-toxic {
+  background-color: var(--toxic-bg);
+  color: var(--toxic-text);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.badge-safe {
+  background-color: var(--safe-bg);
+  color: var(--safe-text);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  font-size: 14px;
+  color: var(--deep-forest);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input, select, textarea {
+  font-family: "Gelasio", serif;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--sage);
+  border-radius: 10px;
+  background-color: white;
+  color: var(--deep-forest);
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--fern);
+}
+
+.plant-care-info {
+  margin-top: 12px;
+  border-top: 1px solid var(--sage);
+  padding-top: 12px;
+}
+
+.plant-care-info table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+}
+
+.plant-care-info th {
+  text-align: left;
+  color: var(--fern);
+  font-weight: 700;
+  padding: 4px 0;
+}
+
+.plant-care-info td {
+  text-align: right;
+  color: var(--deep-forest);
+  padding: 4px 0;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(28, 52, 16, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,18 +268,65 @@
 }
 
 .modal-message {
-  background-color: white;
+  background-color: var(--cream);
   padding: 32px;
-  border-radius: 12px;
+  border-radius: 16px;
   max-width: 400px;
   width: 90%;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal p {
+  font-size: 16px;
+  color: var(--deep-forest);
+  margin-bottom: 24px;
 }
 
 .modal-buttons {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
   margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 24px;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 16px;
+  }
+
+  .plant-collection {
+    gap: 16px;
+  }
+
+  .plant-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .plant-card {
+    width: 100%;
+  }
+
+  main {
+    padding: 24px 16px;
+  }
 }
