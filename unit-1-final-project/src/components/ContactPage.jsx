@@ -33,6 +33,7 @@ function ContactPage() {
         <div>
             {submitted && (<p>Thank you for reaching out! We'll get back to you shortly!</p>)}
             <h2>Contact Form</h2>
+            <p>If you have suggestions for additional features, general questions, or need to report an issue, please fill out the form below!</p>
             <form onSubmit={handleSubmit}>
                 <label>Name:
                     <input type='text' name='name' value={formData.name} onChange={handleChange} required/>

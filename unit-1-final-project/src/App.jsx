@@ -21,7 +21,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className='app-wrapper'>
       <Header />
       <main>
         <Routes>
@@ -32,7 +32,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
