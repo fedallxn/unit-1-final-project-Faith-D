@@ -10,10 +10,6 @@ function PlantCareInfo({plant}) {
                     <th>Light Requirement:</th>
                     <td>{plant.sunlightNeeds}</td>
                 </tr>
-                <tr>
-                    <th>Toxic to Pets?</th>
-                    <td>{plant.isToxic ? 'Yes' : 'No'}</td>
-                </tr>
             </tbody>
         </table>
     )
