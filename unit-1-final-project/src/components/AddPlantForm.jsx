@@ -63,7 +63,7 @@ function AddPlantForm({plants, addPlant, close}) {
                         <option value='Bright Direct'>Bright Direct</option>
                     </select>
                 </label><br />
-                <label>Toxic to Pets?
+                <label className="checkbox-label">Toxic to Pets?
                     <input type="checkbox" name="isToxic" checked={formData.isToxic} onChange={handleChange} />
                 </label><br />
                 <button type="submit">Add Plant</button>

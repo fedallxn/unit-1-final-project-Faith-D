@@ -3,11 +3,11 @@ function PlantCareInfo({plant}) {
         <table>
             <tbody>
                 <tr>
-                    <th>Watering Frequency:</th>
+                    <th>Watering:</th>
                     <td>Every {plant.wateringFrequency} days</td>
                 </tr>
                 <tr>
-                    <th>Light Requirement:</th>
+                    <th>Lighting:</th>
                     <td>{plant.sunlightNeeds}</td>
                 </tr>
             </tbody>
