@@ -77,6 +77,19 @@ header h1 {
   font-size: 24px;
 }
 
+.header-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -499,4 +512,40 @@ input:focus, select:focus, textarea:focus {
   .about-links a {
     text-align: center;
   }
+}
+
+/*HOME PAGE*/
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-content img {
+  width: 400px;
+}
+
+.start-btn {
+  font-size: 16px;
+  padding: 14px 32px;
+}
+
+@keyframes sway {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+.logo-sway {
+  display: inline-block;
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
 }

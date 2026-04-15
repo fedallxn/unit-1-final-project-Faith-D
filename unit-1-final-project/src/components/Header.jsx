@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
+import headerLogo from '../assets/header-logo.png'
 
 function Header() {
     return (
         <header>
-            <h1>Flourish: Insert Logo Here</h1>
+            <div className='header-with-logo'>
+                <img src={headerLogo} alt='Flourish Logo' className='header-logo' />
+                <h1>FLOURISH</h1>
+            </div>
                 <nav>
                     <ul>
                         <li><Link to="/">Home</Link></li>
