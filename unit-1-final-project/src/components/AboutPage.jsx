@@ -1,6 +1,6 @@
 function AboutPage() {
     return (
-        <main className="about-section">
+        <main className="about-page">
             <section className="about-title">
                 <h2>About Flourish</h2>
                 <p className="tagline">A little app made with a lot of love for plants and the people who care for them </p>
@@ -36,10 +36,12 @@ function AboutPage() {
                     Development Cohort 2025-2026. Flourish is not only my first fully developed frontend application, but
                     it's also my Unit 1 Final project for this course. I'm really proud to see how far it's come in the past few weeks!
                     I built this app mainly because of my cat, Mouse, who thinks my plants are his personal snacks. I wanted
-                    to protect him, so I thought Flourish would help me remember which plants to keep out of his reach.
+                    to protect him, so I thought Flourish would help me remember which plants to keep out of his reach!
                 </p>
                 <p>
-                    When I'm not coding you can find me 
+                    When I'm not coding, you can find me putting endless hours into Legend of Zelda: Breath of the Wild, or 
+                    doing something crafty like crocheting! I'm grateful to be a part of this program because I'm learning that 
+                    I can create something functional but also enjoyable to use. That's rewarding in itself.
                 </p>
                 <div className="about-links">
                     <a href="https://github.com/fedallxn" target="_blank" rel="noreferrer">View my Github</a>
