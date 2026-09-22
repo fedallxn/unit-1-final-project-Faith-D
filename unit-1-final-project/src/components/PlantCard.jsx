@@ -11,7 +11,7 @@ function PlantCard({plant, deletePlant}) {
     }
 
     const handleConfirm = () => {
-        deletePlant(plant.id)
+        deletePlant(plant.plantId)
         setShowModal(false)
     }
 
@@ -25,12 +25,12 @@ function PlantCard({plant, deletePlant}) {
 
     return (
         <article className="plant-card">
-            <img src={plant.image} alt={plant.imageAlt} />
+            <img src={plant.plantImageURL} alt={`An image of ${plant.speciesName}`} />
             <div className="plant-card-body">
                 <h3>{plant.name}</h3>
-                <p>{plant.species}</p>
-                <span className={plant.isToxic ? "badge-toxic" : "badge-safe"}>
-                    {plant.isToxic ? "Toxic to Pets" : "Safe for Pets"}
+                <p>{plant.speciesName}</p>
+                <span className={plant.species.toxic ? "badge-toxic" : "badge-safe"}>
+                    {plant.species.toxic ? "Toxic to Pets" : "Safe for Pets"}
                 </span>
                 <div className="plant-card-buttons">
                     <button className="btn-danger" onClick={handleDelete}> Remove Plant</button>

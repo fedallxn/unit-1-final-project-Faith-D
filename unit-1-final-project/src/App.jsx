@@ -6,19 +6,44 @@ import CollectionPage from './components/CollectionPage'
 import AboutPage from './components/AboutPage'
 import ContactPage from './components/ContactPage'
 import mockPlantData from './mockPlantData'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [plants, setPlants] = useState(mockPlantData)
+  const [userId, setUserId] = useState(1);
+  const [plants, setPlants] = useState([]);
 
   const addPlant = (newPlant) => {
     setPlants([...plants, newPlant])
   }
 
-  const deletePlant = (id) => {
-    setPlants(plants.filter(plant => plant.id !== id))
+  const deletePlant = async (plantId) => {
+  try {
+    const response = await fetch(`http://localhost:8080/users/${userId}/plants/${plantId}`, {
+      method: 'DELETE'
+    })
+    if (response.ok) {
+      setPlants(plants.filter(plant => plant.plantId !== plantId))
+    } else {
+      console.error('Failed to delete plant')
+    }
+  } catch (error) {
+    console.error('Error deleting plant:', error)
   }
+}
+
+useEffect(() => {
+  const fetchPlants = async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/users/${userId}/plants`)
+      const data = await response.json()
+      setPlants(data)
+    } catch (error) {
+      console.error('Error fetching plants:', error)
+    }
+  }
+  fetchPlants()
+}, [userId])
 
   return (
     <div className='app-wrapper'>
