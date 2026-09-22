@@ -6,7 +6,7 @@ function ContactPage() {
         name: '',
         email: '',
         category: '',
-        message: ''
+        userMessage: ''
     })
 
     const handleChange = (e) => {
@@ -17,18 +17,31 @@ function ContactPage() {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        setSubmitted(true)
-        setTimeout(() => setSubmitted(false), 4000)
-        setFormData({
-            name: '',
-            email: '',
-            category: '',
-            message: ''
-        })
+        try {
+            const response = await fetch('http://localhost:8080/contactUs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            if (response.ok) {
+                setSubmitted(true)
+                setTimeout(() => setSubmitted(false), 4000)
+                setFormData({
+                    name: '',
+                    email: '',
+                    category: '',
+                    userMessage: ''
+                })
+            }
+        } catch (error) {
+            console.error('Error sending message:', error)
+        }
     }
-    
+
     return (
         <div>
             {submitted && (<p>Thank you for reaching out! We'll get back to you shortly!</p>)}
@@ -50,7 +63,7 @@ function ContactPage() {
                     </select>
                 </label><br />
                 <label>Message:
-                    <textarea name='message' value={formData.message} onChange={handleChange} placeholder='Your thoughts here...' rows={6} required/>
+                    <textarea name='userMessage' value={formData.userMessage} onChange={handleChange} placeholder='Your thoughts here...' rows={6} required/>
                 </label><br />
                 <button type='submit'>Send Message</button>
             </form>
