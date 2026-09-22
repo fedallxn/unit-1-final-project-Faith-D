@@ -13,8 +13,25 @@ function App() {
   const [userId, setUserId] = useState(1);
   const [plants, setPlants] = useState([]);
 
-  const addPlant = (newPlant) => {
-    setPlants([...plants, newPlant])
+  //similar syntax to deletePlant, but requires a POST request and a body with new plant data
+  const addPlant = async(newPlant) => {
+    try {
+      const response = await fetch(`http://localhost:8080/users/${userId}/plants`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newPlant)
+      })
+      if (response.ok) {
+        const addedPlant = await response.json()
+        setPlants([...plants, addedPlant])
+      } else {
+        console.error('Failed to add plant')
+      }
+    } catch (error) {
+      console.error('Error adding plant:', error)
+    }
   }
 
   const deletePlant = async (plantId) => {

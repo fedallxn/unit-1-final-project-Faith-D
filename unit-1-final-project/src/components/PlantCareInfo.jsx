@@ -1,14 +1,19 @@
-function PlantCareInfo({plant}) {
+//passing psecies as a prop instead of plant to get species data independently
+function PlantCareInfo({species}) {
     return (
         <table>
             <tbody>
                 <tr>
                     <th>Watering:</th>
-                    <td>Every {plant.wateringFrequency} days</td>
+                    <td>Every {species.wateringFrequency} days</td>
                 </tr>
                 <tr>
                     <th>Lighting:</th>
-                    <td>{plant.sunlightNeeds}</td>
+                    <td>{species.lightRequirement}</td>
+                </tr>
+                <tr>
+                    <th>Care Notes:</th>
+                    <td>{species.careInfo}</td>
                 </tr>
             </tbody>
         </table>
