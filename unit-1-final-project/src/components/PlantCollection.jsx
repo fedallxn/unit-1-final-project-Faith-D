@@ -5,7 +5,7 @@ function PlantCollection({plants, deletePlant}) {
         <section className="plant-collection">
             {plants.length === 0 ? <p>No plants yet! Add your first plant!</p> : 
                 plants.map((plant) => (
-                    <PlantCard key={plant.id} plant={plant} deletePlant={deletePlant} />
+                    <PlantCard key={plant.plantId} plant={plant} deletePlant={deletePlant} />
                 ))
             }
         </section>
